@@ -62,3 +62,12 @@ backGround (1000, "red", ()=>{
     }, ()=>{console.log("your  request was rejected ☹️ on"+i)})
 }, ()=>{console.log("your  request was rejected ☹️ on"+i)})
 
+
+
+
+let triel= new Promise((resolve,reject)=>{
+resolve();
+})
+triel.then(()=>{
+    console.log("ori")
+})
