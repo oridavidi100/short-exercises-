@@ -71,3 +71,8 @@ resolve();
 triel.then(()=>{
     console.log("ori")
 })
+
+
+
+
+let arrow=(a)=>a*a
