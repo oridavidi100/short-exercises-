@@ -59,24 +59,26 @@ function findCallc(){
 
 //callculate
 function callculate(){
-    stt.n2=document.querySelector(".result").value
-    let wichcallc=findCallc()
-    let results= equals(stt.n1,stt.n2,wichcallc)
-    document.querySelector(".result").value=results
-    stt={
-        n1:"",
-        action:"",
-        n2:"",
+    try{
+        stt.n2=document.querySelector(".result").value
+        let wichcallc=findCallc()
+        let results= equals(stt.n1,stt.n2,wichcallc)
+        document.querySelector(".result").value=results
+        stt={
+            n1:"",
+            action:"",
+            n2:"",
+        }
+        result=results
     }
-    result=results
+    catch{document.querySelector(".result").value=result }
 }
 //sqrt function
 function sqrtA(){
 let n1=document.querySelector(".result").value
 document.querySelector(".result").value=sqrt(n1)
-
-
 }
+
 export {check}
 
 
