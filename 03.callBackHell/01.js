@@ -75,4 +75,3 @@ triel.then(()=>{
 
 
 
-let arrow=(a)=>a*a
