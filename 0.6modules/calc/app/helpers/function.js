@@ -1,4 +1,4 @@
-import {add,multiply,sub,divide,equals,sqrt}from "./math"
+import {add,multiply,sub,divide,equals,sqrt,module}from "./math"
 let result=""
 let stt={
     n1:"",
@@ -8,7 +8,7 @@ let stt={
 
 //function checks if it number or sign
 function check (event){
-    if(!isNaN(event.target.value)){
+    if(!isNaN(event.target.value)||event.target.value==="."){
         isNum(event)
     }    
     else if (event.target.value==="Del"){
@@ -54,6 +54,7 @@ function findCallc(){
     if (stt.action==="-") return sub
     if (stt.action==="X") return multiply
     if (stt.action==="/") return divide
+    if (stt.action==="%") return module
 }
 
 //callculate
@@ -67,11 +68,13 @@ function callculate(){
         action:"",
         n2:"",
     }
+    result=results
 }
 //sqrt function
 function sqrtA(){
 let n1=document.querySelector(".result").value
 document.querySelector(".result").value=sqrt(n1)
+
 
 }
 export {check}

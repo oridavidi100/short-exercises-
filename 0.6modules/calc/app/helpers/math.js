@@ -14,10 +14,13 @@ function divide(n1, n2){
 function sqrt(n1){
     return Math.sqrt(n1)
 }
+function module(n1,n2){
+    return n1%n2
+}
 
 function  equals(n1, n2, callback){
    return callback(n1,n2)
 }
 
 
-export{add,multiply,sqrt,sub,divide,equals}
+export{add,multiply,sqrt,sub,divide,equals,module}
