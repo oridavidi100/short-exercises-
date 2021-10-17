@@ -10,13 +10,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./app/helpers/events.js":
+/*!*******************************!*\
+  !*** ./app/helpers/events.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _function__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./function */ \"./app/helpers/function.js\");\n\r\n//events\r\ndocument.querySelectorAll(\"input\").forEach(element => {\r\n    element.addEventListener(\"click\",_function__WEBPACK_IMPORTED_MODULE_0__.check)\r\n});\r\n\n\n//# sourceURL=webpack://calc/./app/helpers/events.js?");
+
+/***/ }),
+
+/***/ "./app/helpers/function.js":
+/*!*********************************!*\
+  !*** ./app/helpers/function.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"check\": () => (/* binding */ check)\n/* harmony export */ });\n/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math */ \"./app/helpers/math.js\");\n\r\nlet result=\"\"\r\nlet stt={\r\n    n1:\"\",\r\n    action:\"\",\r\n    n2:\"\",\r\n}\r\n\r\n//function checks if it number or sign\r\nfunction check (event){\r\n    if(!isNaN(event.target.value)){\r\n        isNum(event)\r\n    }    \r\n    else if (event.target.value===\"Del\"){\r\n        clear()\r\n    }\r\n    else if(event.target.value===\"=\"){\r\n        callculate()\r\n    }  \r\n    else if(event.target.value===\"√\"){ \r\n            sqrtA() \r\n    }\r\n    else {isAsign(event)}\r\n    \r\n}    \r\n//clears the stt\r\nfunction clear(){\r\n    result=\"\"\r\n     stt={\r\n        n1:\"\",\r\n        action:\"\",\r\n        n2:\"\",\r\n    }\r\n    document.querySelector(\".result\").value=\"\"\r\n}\r\n//deals with number\r\nfunction isNum(event){\r\n    document.querySelector(\".result\").value=\"\"\r\n    result+=(event.target.value)\r\n    document.querySelector(\".result\").value= result\r\n}\r\n\r\n//deals with sign\r\nfunction isAsign(event){\r\n    result=\"\"\r\n    stt.n1 =document.querySelector(\".result\").value\r\n    stt.action=event.target.value\r\n    document.querySelector(\".result\").value= \"\"\r\n}\r\n\r\n//find the right calc function\r\nfunction findCallc(){\r\n    if (stt.action===\"+\") return _math__WEBPACK_IMPORTED_MODULE_0__.add\r\n    if (stt.action===\"-\") return _math__WEBPACK_IMPORTED_MODULE_0__.sub\r\n    if (stt.action===\"X\") return _math__WEBPACK_IMPORTED_MODULE_0__.multiply\r\n    if (stt.action===\"/\") return _math__WEBPACK_IMPORTED_MODULE_0__.divide\r\n}\r\n\r\n//callculate\r\nfunction callculate(){\r\n    stt.n2=document.querySelector(\".result\").value\r\n    let wichcallc=findCallc()\r\n    let results= (0,_math__WEBPACK_IMPORTED_MODULE_0__.equals)(stt.n1,stt.n2,wichcallc)\r\n    document.querySelector(\".result\").value=results\r\n    stt={\r\n        n1:\"\",\r\n        action:\"\",\r\n        n2:\"\",\r\n    }\r\n}\r\n//sqrt function\r\nfunction sqrtA(){\r\nlet n1=document.querySelector(\".result\").value\r\ndocument.querySelector(\".result\").value=(0,_math__WEBPACK_IMPORTED_MODULE_0__.sqrt)(n1)\r\n\r\n}\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://calc/./app/helpers/function.js?");
+
+/***/ }),
+
+/***/ "./app/helpers/math.js":
+/*!*****************************!*\
+  !*** ./app/helpers/math.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"add\": () => (/* binding */ add),\n/* harmony export */   \"multiply\": () => (/* binding */ multiply),\n/* harmony export */   \"sqrt\": () => (/* binding */ sqrt),\n/* harmony export */   \"sub\": () => (/* binding */ sub),\n/* harmony export */   \"divide\": () => (/* binding */ divide),\n/* harmony export */   \"equals\": () => (/* binding */ equals)\n/* harmony export */ });\n//math.js\r\nfunction add(n1, n2){\r\n    return (parseInt(n1)+parseInt(n2))\r\n}\r\nfunction sub(n1, n2){\r\n    return n1-n2\r\n}\r\nfunction multiply(n1, n2){\r\n    return n1*n2\r\n}\r\nfunction divide(n1, n2){\r\n    return n1/n2\r\n}\r\nfunction sqrt(n1){\r\n    return Math.sqrt(n1)\r\n}\r\n\r\nfunction  equals(n1, n2, callback){\r\n   return callback(n1,n2)\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://calc/./app/helpers/math.js?");
+
+/***/ }),
+
 /***/ "./app/main.js":
 /*!*********************!*\
   !*** ./app/main.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./app/styles.css\");\n\n\n//# sourceURL=webpack://calc/./app/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./app/styles.css\");\n/* harmony import */ var _helpers_events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/events */ \"./app/helpers/events.js\");\n/* harmony import */ var _helpers_function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers/function */ \"./app/helpers/function.js\");\n/* harmony import */ var _helpers_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/math */ \"./app/helpers/math.js\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://calc/./app/main.js?");
 
 /***/ }),
 
