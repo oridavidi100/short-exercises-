@@ -39,7 +39,7 @@ async function post(name, age, abilitys) {
                 "Content-Type" : "application/json",
                 "Access-Control-Allow-Origin":"*" }
             });
-        alert(response.data+"to the Kingdom of Yakov")
+        alert(response.data)
 
     } catch (error) {
         alert ("Please try again");
