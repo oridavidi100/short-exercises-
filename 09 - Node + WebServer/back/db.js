@@ -10,3 +10,4 @@ const validStudent = {
     "Good communication",
   ],
 };
+module.exports=validStudent;
