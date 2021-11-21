@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import HotelsGallery from '../src/components/HotelsGallery';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
