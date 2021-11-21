@@ -1,4 +1,4 @@
-const hotelData = [
+export const hotelData = [
   {
     name: 'מלון מרום',
     'street name': 'פלמח',
@@ -78,4 +78,3 @@ const hotelData = [
     phone: 8508888,
   },
 ];
-export default hotelData;
