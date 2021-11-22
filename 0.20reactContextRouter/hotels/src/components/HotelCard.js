@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class HotelCard extends Component {
+export class HotelCard extends Component {
   constructor(props) {
     super(props);
   }
@@ -9,7 +9,7 @@ class HotelCard extends Component {
       <div>
         <p>{this.props.name}</p>
         <p>{this.props.street}</p>
-        <p>{this.props.img}</p>
+        <img src={this.props.imgSrc} width='14%'></img>
       </div>
     );
   }
