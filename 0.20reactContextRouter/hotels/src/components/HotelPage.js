@@ -40,7 +40,7 @@ export class HotelPage extends Component {
           like
         </button>
         <p> {this.state.likes}</p>
-        <img src={this.props.img}></img>
+        <img alt='hotel' src={this.props.img}></img>
       </div>
     );
   }

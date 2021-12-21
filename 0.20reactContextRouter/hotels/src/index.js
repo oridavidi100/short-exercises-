@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import HotelsGallery from '../src/components/HotelsGallery';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { kebabCase } from './helpers/string';
 import { hotelsData } from './hotels';
 import { HotelPage } from './components/HotelPage';
